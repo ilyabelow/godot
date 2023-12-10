@@ -3220,7 +3220,7 @@ void EditorPropertyResource::_resource_changed(const Ref<Resource> &p_resource) 
 		}
 
 		if (r && !r->is_local_to_scene()) {
-			EditorNode::get_singleton()->show_warning(TTR("Can't create a ViewportTexture on this resource because it's not set as local to scene.\nPlease switch on the 'local to scene' property on it (and all resources containing it up to a node)."));
+			EditorNode::get_singleton()->show_warning(TTR("Can't create a ViewportTexture on this resource because it is not local to scene, and the texture must be unique for each Viewport in different scene instances.\nPlease switch on the 'local to scene' property on the resource (and all resources containing it up to a node)."));
 			emit_changed(get_edited_property(), Ref<Resource>());
 			update_property();
 			return;
